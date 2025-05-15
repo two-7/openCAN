@@ -4,9 +4,9 @@
 unsigned char len=0,buf[8],REQ[8],OBD[8],E0[8],E1[8],E8[8],E9[8];
 unsigned long int messID;
 
-#define CAN0_INT 2  // Set INT to pin 5
+#define CAN0_INT 2
 #define CAN1_INT 3
-MCP_CAN CAN0(10);   // Set CS to pin 10 broken car side
+MCP_CAN CAN0(10);
 MCP_CAN CAN1(11);
 
 void setup()
