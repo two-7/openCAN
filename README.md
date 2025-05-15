@@ -50,3 +50,5 @@ Use **coolant temperature** data from the CAN bus to:
 | A2–A3 | Reads switch-to-ground inputs                                                         |
 | A4–A5 | Reads 12V sensor signals via voltage divider:  
 `[12V input] → 4.7kΩ → [SAMD pin] → 2.2kΩ → GND` |
+
+![digital IO](https://github.com/user-attachments/assets/9faa2da8-8e4c-43a7-91cf-a10a13ae3909)
