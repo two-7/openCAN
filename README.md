@@ -52,4 +52,4 @@ Use **coolant temperature** data from the CAN bus to:
 `[12V input] → 4.7kΩ → [SAMD pin] → 2.2kΩ → GND` |
 
 ![digital IO](https://github.com/user-attachments/assets/9faa2da8-8e4c-43a7-91cf-a10a13ae3909)
-![OpenCAN pinout v1 1](https://github.com/user-attachments/assets/2598ac1b-dc0b-4725-ba15-bdf67b67f817)
+![OpenCAN pinout v1 1](https://github.com/user-attachments/assets/2a63f51d-138e-461c-a77b-e0cef9ffa55e)
