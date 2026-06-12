@@ -1,7 +1,5 @@
 #include <SPI.h>
 #include "mcp_can.h"
-#include "sam.h"
-
 
 //CAN/MCP vars
 unsigned char len = 0;
