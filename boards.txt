@@ -32,6 +32,6 @@ opencan.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 opencan.build.openocdscript=openocd_scripts/arduino_zero.cfg
 opencan.build.variant=openCAN
 opencan.build.variant_system_lib=
-opencan.build.vid=0x1209
+opencan.build.vid=0x0909
 opencan.build.pid=0x2727
 opencan.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DDEVICE_OPENCAN
