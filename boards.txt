@@ -2,11 +2,11 @@
 # --------------------------------------
 opencan.name=openCAN
 
-opencan.vid.0=0x1209
+opencan.vid.0=0x0909
 opencan.pid.0=0x2727
-opencan.upload_port.0.vid=0x1209
+opencan.upload_port.0.vid=0x0909
 opencan.upload_port.0.pid=0x2727
-opencan.upload_port.0.board=opencan
+opencan.upload_port.0.board=openCAN
 
 opencan.upload.tool=bossac
 opencan.upload.tool.default=bossac
