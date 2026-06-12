@@ -28,8 +28,7 @@ Use **coolant temperature** data from the CAN bus to:
 
 ## 🔧 Hardware Details
 
-**Microcontroller**: ATSAMD21G  
-**Bootloader**: Arduino Zero / SparkFun Mini SAMD bootloader  
+**Microcontroller**: ATSAMD21G
 
 ### 🚌 CAN Interfaces (Dual MCP2515)
 | CAN Bus | CS Pin | INT Pin |
@@ -40,7 +39,7 @@ Use **coolant temperature** data from the CAN bus to:
 ### ⚡ Digital Outputs
 | Pin        | Function                        |
 |------------|---------------------------------|
-| D0–D1, D4–D7 | Switch 12V (High-side drive)     |
+| D0–D1, D4–D7 | Switch 12V (Low-amp output control)     |
 | D8–D9      | Relay control via ground switch |
 
 ### 📥 Analog Inputs
