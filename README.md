@@ -50,7 +50,8 @@ Use **coolant temperature** data from the CAN bus to:
 | A4–A5 | Reads 12V sensor signals via voltage divider:  
 `[12V input] → 4.7kΩ → [SAMD pin] → 2.2kΩ → GND` |
 
-![digital IO](https://github.com/user-attachments/assets/9faa2da8-8e4c-43a7-91cf-a10a13ae3909)
+![digital IO](https://github.com/user-attachments/assets/152f15c9-3eba-42aa-979a-cd5451eb33e8)
+![3d Board](https://github.com/user-attachments/assets/e2820e35-30a0-4147-82b2-8f1e53d88731)
 
 **NOTE*** V1.1 PINOUT ONLY - V1.2 and V1.3 refer to the terminal labels printed on the board.**
 ![OpenCAN pinout v1 1](https://github.com/user-attachments/assets/2a63f51d-138e-461c-a77b-e0cef9ffa55e)
