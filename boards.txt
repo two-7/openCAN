@@ -1,0 +1,37 @@
+# openCAN SAMD21 Boards
+# --------------------------------------
+opencan.name=openCAN
+
+opencan.vid.0=0x1209
+opencan.pid.0=0x2727
+opencan.upload_port.0.vid=0x1209
+opencan.upload_port.0.pid=0x2727
+opencan.upload_port.0.board=opencan
+
+opencan.upload.tool=bossac
+opencan.upload.tool.default=bossac
+opencan.upload.tool.network=arduino_ota
+opencan.upload.protocol=sam-ba
+opencan.upload.maximum_size=262144
+opencan.upload.maximum_data_size=32768
+opencan.upload.use_1200bps_touch=true
+opencan.upload.wait_for_upload_port=true
+opencan.upload.native_usb=true
+
+opencan.bootloader.tool=openocd
+opencan.bootloader.tool.default=openocd
+opencan.bootloader.file=openCAN/openCAN_ba.bin
+
+opencan.build.mcu=cortex-m0plus
+opencan.build.f_cpu=48000000L
+opencan.build.usb_product="openCAN"
+opencan.build.usb_manufacturer="two-7"
+opencan.build.board=TWO7_OPENCAN
+opencan.build.core=arduino
+opencan.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+opencan.build.openocdscript=openocd_scripts/arduino_zero.cfg
+opencan.build.variant=openCAN
+opencan.build.variant_system_lib=
+opencan.build.vid=0x1209
+opencan.build.pid=0x2727
+opencan.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DDEVICE_OPENCAN

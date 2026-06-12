@@ -1,0 +1,41 @@
+{
+  "packages": [
+    {
+      "name": "two-7",
+      "maintainer": "two-7",
+      "websiteURL": "https://github.com/two-7/openCAN",
+      "email": "",
+      "help": {
+        "online": "https://github.com/two-7/openCAN/issues"
+      },
+      "platforms": [
+        {
+          "name": "openCAN SAMD21 Boards",
+          "architecture": "samd",
+          "version": "1.0.0",
+          "category": "Contributed",
+          "url": "https://github.com/two-7/openCAN/releases/download/v1.0.0/openCAN.zip",
+          "archiveFileName": "openCAN.zip",
+          "checksum": "SHA-256:38193286D50670B99C58E090A82D28EDD90DF7B90222003926691BCDDDFDFEAA",
+          "size": "1566331",
+          "boards": [
+            { "name": "openCAN" }
+          ],
+          "toolsDependencies": [
+            {
+              "packager": "arduino",
+              "name": "arm-none-eabi-gcc",
+              "version": "7-2017q4"
+            },
+            {
+              "packager": "arduino",
+              "name": "bossac",
+              "version": "1.7.0"
+            }
+          ]
+        }
+      ],
+      "tools": []
+    }
+  ]
+}
