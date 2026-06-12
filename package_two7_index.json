@@ -16,7 +16,7 @@
           "category": "Contributed",
           "url": "https://github.com/two-7/openCAN/releases/download/v1.0.0/openCAN.zip",
           "archiveFileName": "openCAN.zip",
-          "checksum": "SHA-256:26B9587D043F328609D8F3141B356719A5EE4CAD4CF8A71F5FFB36C902713056",
+          "checksum": "SHA-256:6FE8D0AFBE267907ECC996F8FA8D3E3A13F9D6B3406226F16B30E13536849C03",
           "size": "1623662",
           "boards": [
             { "name": "openCAN" }
