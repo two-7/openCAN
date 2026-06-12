@@ -6,7 +6,7 @@ opencan.vid.0=0x0909
 opencan.pid.0=0x2727
 opencan.upload_port.0.vid=0x0909
 opencan.upload_port.0.pid=0x2727
-opencan.upload_port.0.board=openCAN
+opencan.upload_port.0.board=opencan
 
 opencan.upload.tool=bossac
 opencan.upload.tool.default=bossac
@@ -20,7 +20,7 @@ opencan.upload.native_usb=true
 
 opencan.bootloader.tool=openocd
 opencan.bootloader.tool.default=openocd
-opencan.bootloader.file=openCAN/openCAN_ba.bin
+opencan.bootloader.file=openCAN/opencan_ba.bin
 
 opencan.build.mcu=cortex-m0plus
 opencan.build.f_cpu=48000000L
@@ -32,6 +32,31 @@ opencan.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
 opencan.build.openocdscript=openocd_scripts/arduino_zero.cfg
 opencan.build.variant=openCAN
 opencan.build.variant_system_lib=
-opencan.build.vid=0x1209
+opencan.build.vid=0x0909
 opencan.build.pid=0x2727
 opencan.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DDEVICE_OPENCAN
+
+# RAUSWORKS VIM (Monitor Only)
+# --------------------------------------
+vim_monitor.name=RAUSWORKS VIM (Monitor Only)
+
+vim_monitor.vid.0=0x0909
+vim_monitor.pid.0=0x0027
+vim_monitor.upload_port.0.vid=0x0909
+vim_monitor.upload_port.0.pid=0x0027
+vim_monitor.upload_port.0.board=vim_monitor
+
+vim_monitor.upload.tool=none
+vim_monitor.upload.protocol=none
+vim_monitor.upload.maximum_size=0
+
+vim_monitor.build.mcu=cortex-m0plus
+vim_monitor.build.f_cpu=48000000L
+vim_monitor.build.usb_product="VIM"
+vim_monitor.build.usb_manufacturer="RAUSWORKS"
+vim_monitor.build.board=TWO7_VIM
+vim_monitor.build.core=arduino
+vim_monitor.build.variant=openCAN
+vim_monitor.build.vid=0x0909
+vim_monitor.build.pid=0x0027
+vim_monitor.build.extra_flags=-D__SAMD21G18A__ {build.usb_flags} -DDEVICE_VIM
