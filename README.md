@@ -47,7 +47,7 @@ Use **coolant temperature** data from the CAN bus to:
 |--------|----------------------------------------------------------------------------------------|
 | A0–A1 | Reads resistors using a 1kΩ voltage divider                                            |
 | A2–A3 | Reads switch-to-ground inputs                                                         |
-| A4–A5 | Reads 12V sensor signals via voltage divider:  
+| A4–A5 | Reads 5V sensor signals via voltage divider:  
 `[12V input] → 4.7kΩ → [SAMD pin] → 2.2kΩ → GND` |
 
 ![digital IO](https://github.com/user-attachments/assets/152f15c9-3eba-42aa-979a-cd5451eb33e8)
