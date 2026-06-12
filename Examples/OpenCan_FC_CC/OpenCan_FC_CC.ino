@@ -1,5 +1,7 @@
 #include <SPI.h>
 #include "mcp_can.h"
+#include "sam.h"
+
 
 //CAN/MCP vars
 unsigned char len = 0;
@@ -18,7 +20,7 @@ byte radfanspeed=4, auxfanspeed=4;
 const byte high=38; //high fan duty cycle 95%
 const byte med=25; //med fan duty cycle 65%
 const byte low=18; //low fan duty cycle 35%
-const byte off=4; //fan idle(off) duty cycle 5%
+const byte off=4; //fan idle(off) duty cycle 10%
 const byte temp1=96;//Stage 1 coolant temp
 const byte temp2=99;//Stage 2 coolant temp
 const byte temp3=102;//Stage 3 coolat tempCruise vars
@@ -27,27 +29,36 @@ bool mainsw=0, mainpwr=1, cancel=1, setretard=1, resaccel=1;
 //Pin assignment vars
 byte ccancel=0, cresaccel=1, csetretard=4, radfan=5, auxfan=6;
 
-#define CAN0_INT 2  // Set INT to pin 2
-MCP_CAN CAN0(10);   // Set CS to pin 10
+#define CAN1_INT 2 // Set INT to pin 2
+MCP_CAN CAN1(10);  // Set CS to pin 10
+#define CAN2_INT 3 //
+MCP_CAN CAN2(11);
 
-void setup()
-{
-SerialUSB.begin(5000000);
-pinMode(ccancel,OUTPUT);
-pinMode(csetretard,OUTPUT);
-pinMode(cresaccel,OUTPUT);
-pinMode(radfan,OUTPUT);
-pinMode(auxfan,OUTPUT);
+void setup(){
+  pinMode(ccancel,OUTPUT);
+  pinMode(csetretard,OUTPUT);
+  pinMode(cresaccel,OUTPUT);
+  pinMode(radfan,OUTPUT);
+  pinMode(auxfan,OUTPUT);
 
-digitalWrite(ccancel,cancel); //red/gray T15/7
-digitalWrite(csetretard,setretard); //red/yellow T15/9
-digitalWrite(cresaccel,resaccel); //blue T15/8
+  pinMode(11, OUTPUT);
+  digitalWrite(11,HIGH); //park CAN2 CS
 
-CAN0.begin(MCP_ANY, CAN_500KBPS, MCP_16MHZ); // Initialize MCP2515 running at 8MHz with a baudrate of 500kb/s and the masks and filters disabled.
-CAN0.setMode(MCP_NORMAL);     // Set operation mode to normal so the MCP2515 sends acks to received data.
-pinMode(CAN0_INT, INPUT);     // Configuring pin for /INT input
+  digitalWrite(ccancel,cancel); //red/gray T15/7
+  digitalWrite(csetretard,setretard); //red/yellow T15/9
+  digitalWrite(cresaccel,resaccel); //blue T15/8
+
+  SerialUSB.begin(500000);
+  SPI.begin();
+
+  CAN1.begin(MCP_ANY, CAN_500KBPS, MCP_16MHZ); // Initialize MCP2515 running at 16MHz with a baudrate of 500kb/s and the masks and filters disabled.
+  CAN1.setMode(MCP_NORMAL);     // Set operation mode to normal so the MCP2515 sends acks to received data.
+  
+  CAN2.begin(MCP_ANY, CAN_500KBPS, MCP_16MHZ); // Initialize MCP2515 running at 16MHz with a baudrate of 500kb/s and the masks and filters disabled.
+  CAN2.setMode(MCP_NORMAL);     // Set operation mode to normal so the MCP2515 sends acks to received data.
+  pinMode(CAN1_INT, INPUT);     // Configuring pin for /INT input
+  pinMode(CAN2_INT, INPUT);
 }
-
 
 void loop(){
 
@@ -61,6 +72,9 @@ void loop(){
     SerialUSB.print(" ");
     SerialUSB.print("resaccel = ");
     SerialUSB.println(!resaccel);
+    SerialUSB.print("coolant temp = ");
+    SerialUSB.print(temp);
+    SerialUSB.print(" ");
     SerialUSB.print("radfanspeed = ");
     SerialUSB.print(radfanspeed);
     SerialUSB.print(" ");
@@ -70,8 +84,8 @@ void loop(){
   }
   
 
-  if(CAN0.checkReceive()==3){
-    CAN0.readMsgBuf(&messID,&len, buf);
+  if(!digitalRead(CAN1_INT)){
+    CAN1.readMsgBuf(&messID,&len, buf);
 
     //check cc position
     if(messID==0x38A&&bitRead(buf[2],2)==1&&bitRead(buf[2],3)==0){
@@ -104,7 +118,6 @@ void loop(){
       setfanspeed();
     } 
   }
-
 
   //set rad fan PWM
   time=millis(); 
