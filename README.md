@@ -15,12 +15,28 @@ OpenCAN can operate as a **man-in-the-middle (MITM)** device on the CAN bus, int
 
 ### Example Use Cases
 
+#### 🔄 Cross-Platform Signal Translation (Engine Swaps)
+
+Bridge a donor engine's CAN messages to a chassis that expects a different format:
+
+- Read RPM, coolant temp, oil pressure, and other signals from the engine-side CAN bus
+- Repackage them into the message IDs and formats the chassis cluster expects
+- Factory gauges, warning lights, and chimes work correctly without cluster modification or a standalone digital dash
+
 #### 🌡 PWM Fan Control
 
 Use **coolant temperature** data from the CAN bus to:
 
 - Generate a PWM output signal
 - Drive an electric fan based on temperature profile
+
+#### 🚙 Speed Signal Generation
+
+Generate a VSS (vehicle speed signal) for a swapped engine, transmission, or ECU:
+
+- Read output shaft speed sensor, speed sensor pulses, or ABS speed data
+- Calculate vehicle speed based on tire size and final drive ratio
+- Output a corrected speed signal (CAN message or pulse output) for the ECU, cluster, and cruise control to use
 
 #### 🛠 Gauge Reassignment
 
@@ -47,14 +63,6 @@ Use live RPM data from the CAN bus to fire outputs at specific thresholds:
 - Trigger a relay output above a set RPM (shift light, exhaust valve, anti-lag solenoid)
 - Combine with throttle position or clutch switch input for launch control or 2-step style logic
 
-#### 🔄 Cross-Platform Signal Translation (Engine Swaps)
-
-Bridge a donor engine's CAN messages to a chassis that expects a different format:
-
-- Read RPM, coolant temp, oil pressure, and other signals from the engine-side CAN bus
-- Repackage them into the message IDs and formats the chassis cluster expects
-- Factory gauges, warning lights, and chimes work correctly without cluster modification or a standalone digital dash
-
 #### 🛟 Failsafe Monitoring
 
 Add protection the donor ECU doesn't provide on a swapped platform:
@@ -62,14 +70,6 @@ Add protection the donor ECU doesn't provide on a swapped platform:
 - Monitor oil pressure switch and coolant temp sender on analog inputs
 - If oil pressure drops or coolant temp exceeds a threshold, trigger a relay output (warning light, fuel pump cutoff, fan to max)
 - Runs independently of the ECU, so it works even if the donor ECU has no concept of the new chassis's sensors
-
-#### 🚙 Speed Signal Generation
-
-Generate a VSS (vehicle speed signal) for a swapped transmission or ECU:
-
-- Read output shaft speed sensor on a digital input
-- Calculate vehicle speed based on tire size and final drive ratio
-- Output a corrected speed signal (CAN message or pulse output) for the ECU, cluster, and cruise control to use
 
 ## 🔧 Hardware Details
 
