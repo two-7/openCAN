@@ -2,6 +2,14 @@
 
 **Open CAN** is a 32-bit embedded system firmware project designed for CAN bus control, monitoring, and manipulation. It supports a range of real-time vehicle data applications and is open-sourced to enable easy customization and experimentation.
 
+## Built On OpenCAN
+
+[#built-on-opencan](#built-on-opencan)
+
+The [RAUSWORKS VIM](https://rausworks.com) (Vehicle Integration Module) runs on the OpenCAN platform. VIM bridges VAG ECUs to Porsche chassis for engine swap builds, reading and translating signals across two independent CAN buses in real time.
+
+VIM is a closed-source application built on this open firmware platform, proof that OpenCAN's dual-CAN architecture handles complex, production automotive integrations. The same board and toolchain that runs VIM is available here for your own projects.
+
 ## 🔧 Hardware Features
 
 - ✅ 8 Digital Outputs  
