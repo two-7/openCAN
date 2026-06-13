@@ -108,6 +108,23 @@ All 8 digital output channels are NPN switch-to-ground stages (MMBT2222A). VIN p
 | A4  | R22 (4.7k) / R23 (2.2k to GND) | 0-5V analog sensor input, ~1.6V at pin for 5V signal |
 | A5  | R21 (4.7k) / R24 (2.2k to GND) | 0-5V analog sensor input, ~1.6V at pin for 5V signal |
 
+## 🔌 Connecting to OpenCAN
+
+### Arduino IDE Setup
+
+1. Download and install the Arduino IDE from [arduino.cc/en/software](https://www.arduino.cc/en/software)
+2. Open the IDE. Go to **File → Preferences**.
+3. Paste the following URL into the **Additional Boards Manager URLs** field:
+   `https://raw.githubusercontent.com/two-7/openCAN/main/package_two7_index.json`
+4. Go to **Tools → Board → Boards Manager**.
+5. Search for **openCAN SAMD21 Boards** and install the package.
+6. Plug the OpenCAN board into the computer.
+7. Go to **Tools → Port** and select the COM port OpenCAN is connected to.
+8. Go to **Tools → Board → openCAN SAMD21 Boards → openCAN**.
+9. Go to **Tools → Serial Monitor**.
+10. In the Serial Monitor pane, set the line ending to **New Line** and the baud rate to **500000**.
+11. Live OpenCAN data streams to the Serial Monitor, refreshing once per second.
+
 ### 📷 Board Images
 
 ![digital IO](https://github.com/user-attachments/assets/152f15c9-3eba-42aa-979a-cd5451eb33e8)
