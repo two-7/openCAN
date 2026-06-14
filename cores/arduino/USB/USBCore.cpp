@@ -229,12 +229,21 @@ bool USBDeviceClass::sendDescriptor(USBSetup &setup)
 			return sendStringDescriptor(STRING_MANUFACTURER, setup.wLength);
 		}
 		else if (setup.wValueL == ISERIAL) {
-			char name[ISERIAL_MAX_LEN];
-			memset(name, 0, sizeof(name));
-#ifdef PLUGGABLE_USB_ENABLED
-			PluggableUSB().getShortName(name);
-			return sendStringDescriptor((uint8_t*)name, setup.wLength);
-#endif
+		    char name[33];
+		    uint32_t serial[4];
+		    serial[0] = *(volatile uint32_t *)0x0080A00C;
+		    serial[1] = *(volatile uint32_t *)0x0080A040;
+		    serial[2] = *(volatile uint32_t *)0x0080A044;
+		    serial[3] = *(volatile uint32_t *)0x0080A048;
+		    for (int i = 0; i < 4; i++) {
+		        for (int j = 0; j < 8; j++) {
+		            uint8_t nibble = (serial[i] >> (28 - j * 4)) & 0xF;
+		            name[i * 8 + j] = nibble < 10 ? '0' + nibble : 'A' + nibble - 10;
+		        }
+		    }
+    name[32] = '\0';
+    return sendStringDescriptor((uint8_t*)name, setup.wLength);
+}
 		}
 		else {
 			return false;
