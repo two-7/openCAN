@@ -243,7 +243,6 @@ bool USBDeviceClass::sendDescriptor(USBSetup &setup)
 		    }
     name[32] = '\0';
     return sendStringDescriptor((uint8_t*)name, setup.wLength);
-}
 		}
 		else {
 			return false;
