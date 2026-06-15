@@ -20,7 +20,7 @@ opencan.upload.native_usb=true
 
 opencan.bootloader.tool=openocd
 opencan.bootloader.tool.default=openocd
-opencan.bootloader.file=openCAN/opencan_ba.bin
+opencan.bootloader.file=openCAN/openCAN_ba.bin
 
 opencan.build.mcu=cortex-m0plus
 opencan.build.f_cpu=48000000L
@@ -53,7 +53,7 @@ vim_monitor.upload.maximum_size=0
 vim_monitor.build.mcu=cortex-m0plus
 vim_monitor.build.f_cpu=48000000L
 vim_monitor.build.usb_product="VIM"
-vim_monitor.build.usb_manufacturer="RAUSWORKS"
+vim_monitor.build.usb_manufacturer="two-7"
 vim_monitor.build.board=TWO7_VIM
 vim_monitor.build.core=openCAN
 vim_monitor.build.variant=openCAN
