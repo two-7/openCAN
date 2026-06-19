@@ -94,8 +94,8 @@ All 8 digital output channels are NPN switch-to-ground stages (MMBT2222A). openC
 | D5  | Q4 (MMBT2222A) | R10 (510) | Low-amp output control |
 | D6  | Q5 (MMBT2222A) | R11 (510) | Low-amp output control |
 | D7  | Q6 (MMBT2222A) | R17 (1k) | Low-amp output control |
-| D8  | Q7 (MMBT2222A) | RL8 (1k) | Relay control via ground switch |
-| D9  | Q8 (MMBT2222A) | RL9 (1k) | Relay control via ground switch |
+| D8  | Q7 (MMBT2222A) | R18 (1k) | Relay control via ground switch |
+| D9  | Q8 (MMBT2222A) | R19 (1k) | Relay control via ground switch |
 
 ### 📥 Analog Inputs
 
