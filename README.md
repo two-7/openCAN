@@ -1,4 +1,4 @@
-openCAN
+### openCAN
 
 openCAN is an open source firmware platform for working with vehicle CAN bus networks. It can sit on the bus as a node, reading and injecting messages, or inline as a man-in-the-middle, filtering and rewriting traffic in real time. Built on the 32-bit SAMD21, programmable through the Arduino IDE, with fully open source firmware.
 
@@ -11,13 +11,13 @@ openCAN is an open source firmware platform for working with vehicle CAN bus net
 ✅ 32-bit Microcontroller (ATSAMD21G)
 
 
-🚗 What Can It Do?
+### 🚗 What Can It Do?
 
 openCAN can operate as a man-in-the-middle (MITM) device on the CAN bus, intercepting, filtering, and modifying CAN messages in real time. This allows for creative applications in automotive systems, retrofits, and diagnostics.
 
 Example Use Cases
 
-🔄 Cross-Platform Signal Translation (Engine Swaps)
+### 🔄 Cross-Platform Signal Translation (Engine Swaps)
 
 Bridge a donor engine's CAN messages to a chassis that expects a different format:
 
