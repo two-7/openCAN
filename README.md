@@ -134,8 +134,8 @@ All 8 digital output channels are NPN switch-to-ground stages (MMBT2222A). VIN p
 
 ![OpenCAN pinout v1.1](https://github.com/user-attachments/assets/2a63f51d-138e-461c-a77b-e0cef9ffa55e)
 
-## Built On OpenCAN
+<!-- ## Built On OpenCAN
 
 The [RAUSWORKS VIM](https://rausworks.com) (Vehicle Integration Module) runs on the OpenCAN platform. VIM bridges VAG ECUs to Porsche chassis for engine swap builds, reading and translating signals across two independent CAN buses in real time.
 
-VIM is a closed-source application built on this open firmware platform, proof that OpenCAN's dual-CAN architecture handles complex, production automotive integrations. The same board and toolchain that runs VIM is available here for your own projects.
+VIM is a closed-source application built on this open firmware platform, proof that OpenCAN's dual-CAN architecture handles complex, production automotive integrations. The same board and toolchain that runs VIM is available here for your own projects. --!>
