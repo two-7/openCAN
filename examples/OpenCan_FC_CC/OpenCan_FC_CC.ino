@@ -1,5 +1,7 @@
 #include <SPI.h>
 #include "mcp_can.h"
+#include "sam.h"
+
 
 //CAN/MCP vars
 unsigned char len = 0;
@@ -62,6 +64,8 @@ void loop(){
 
   if (millis()-print>1000){
     print=millis();
+    //SerialUSB.print("RCAUSE: 0x");
+    //SerialUSB.println(PM->RCAUSE.reg, HEX);
     SerialUSB.print("cancel = ");
     SerialUSB.print(!cancel);
     SerialUSB.print(" ");
@@ -72,12 +76,34 @@ void loop(){
     SerialUSB.println(!resaccel);
     SerialUSB.print("coolant temp = ");
     SerialUSB.print(temp);
-    SerialUSB.print(" ");
+    SerialUSB.print("degC ");
     SerialUSB.print("radfanspeed = ");
-    SerialUSB.print(radfanspeed);
+    if (radfanspeed == off){
+      SerialUSB.print("Off");
+    }
+    else if (radfanspeed == low){
+      SerialUSB.print("Low");
+    }
+    else if (radfanspeed == med){
+      SerialUSB.print("Med");
+    }
+    else if (radfanspeed == high){
+      SerialUSB.print("High");
+    }
     SerialUSB.print(" ");
-    SerialUSB.print("auxradfanspeed = ");
-    SerialUSB.println(auxfanspeed);
+    SerialUSB.print("auxfanspeed = ");
+      if (auxfanspeed == off){
+    SerialUSB.println("Off");
+    }
+    else if (auxfanspeed == low){
+      SerialUSB.println("Low");
+    }
+    else if (auxfanspeed == med){
+      SerialUSB.println("Med");
+    }
+    else if (auxfanspeed == high){
+      SerialUSB.println("High");
+    }
     SerialUSB.println("");
   }
   
