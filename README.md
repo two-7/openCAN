@@ -130,10 +130,6 @@ All 8 digital output channels are NPN switch-to-ground stages (MMBT2222A). VIN p
 ![digital IO](https://github.com/user-attachments/assets/152f15c9-3eba-42aa-979a-cd5451eb33e8)
 ![3d Board](https://github.com/user-attachments/assets/e2820e35-30a0-4147-82b2-8f1e53d88731)
 
-**NOTE: V1.1 pinout shown below. For V1.2 and V1.3, refer to the terminal labels printed on the board.**
-
-![openCAN pinout v1.1](https://github.com/user-attachments/assets/2a63f51d-138e-461c-a77b-e0cef9ffa55e)
-
 <!-- ## Built On openCAN
 
 The [RAUSWORKS VIM](https://rausworks.com) (Vehicle Integration Module) runs on the openCAN platform. VIM bridges VAG ECUs to Porsche chassis for engine swap builds, reading and translating signals across two independent CAN buses in real time.
