@@ -84,7 +84,7 @@ Add protection the donor ECU doesn't provide on a swapped platform:
 
 ### ⚡ Digital Outputs
 
-All 8 digital output channels are NPN switch-to-ground stages (MMBT2222A). VIN pulls the output node high through a base/collector resistor, and the SAMD21 GPIO drives the transistor base, pulling the output low when active. D0, D1, and D4–D7 are the six low-amp output control channels. D8 and D9 are sized for relay coil drive. (D2 and D3 are reserved as the CAN controller interrupt lines.)
+All 8 digital output channels are NPN switch-to-ground stages (MMBT2222A). openCAN pulls the output node high through a base/collector resistor, and the SAMD21 GPIO drives the transistor base, pulling the output low when active. D0, D1, and D4–D7 are the six low-amp output control channels. D8 and D9 are sized for relay coil drive. (D2 and D3 are reserved as the CAN controller interrupt lines.)
 
 | Pin | Driver | Resistor | Function |
 | --- | ------ | -------- | -------- |
