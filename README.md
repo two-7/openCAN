@@ -11,7 +11,7 @@
 
 ## 🚗 What Can It Do?
 
-openCAN can operate as a **man-in-the-middle (MITM)** device on the CAN bus, intercepting, filtering, and modifying CAN messages in real time. This allows for creative applications in automotive systems, retrofits, and diagnostics.
+openCAN can operate as a gateway or **man-in-the-middle (MITM)** device on the CAN bus, intercepting, filtering, and modifying CAN messages in real time. This allows for creative applications in automotive systems, retrofits, and diagnostics.
 
 **Example Use Cases**
 
